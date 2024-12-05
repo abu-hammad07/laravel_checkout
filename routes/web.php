@@ -33,6 +33,10 @@ Route::post('/webhook/request-finance', [FinanceController::class, 'handleWebhoo
 Route::get('/', 'App\Http\Controllers\StripeController@home')->name('home');
 Route::post('/customer-event', 'App\Http\Controllers\StripeController@customerEvent')->name('customer.event');
 
+Route::get('error', function(){
+    return view('error');
+})->name('error');
+
 
 
 Route::middleware(['auth', 'role:admin'])->group(function () {

@@ -18,12 +18,6 @@
 
             <h1 class="text-center">Request Finance Payment</h1>
 
-            @if (session('error'))
-                <div class="alert alert-danger">
-                    {{ session('error') }}
-                </div>
-            @endif
-
             <div class="col-md-6 offset-md-3 card mt-3">
                 <form class="row g-3 needs-validation card-body" novalidate action="{{ route('create.payment') }}"
                     method="POST">
@@ -57,7 +51,6 @@
 
                     <div class="col-12">
                         <button class="btn btn-primary" type="submit">Pay Now</button>
-                        <a class="btn btn-outline-primary" href="https://decensatdesign.com/">Cancel</a>
                     </div>
                 </form>
             </div>

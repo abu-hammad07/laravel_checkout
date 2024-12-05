@@ -44,7 +44,7 @@ class FinanceController extends Controller
             return redirect()->away($response->json('paymentLink'));
         } else {
             // Handle failure
-            return redirect('/')->with('error', 'Payment request failed. Please currect the details and try again.');
+            return redirect('/finance')->with('error', 'Payment request failed. Please currect the details and try again.');
         }
     }
 
