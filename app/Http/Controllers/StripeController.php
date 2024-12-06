@@ -24,8 +24,12 @@ class StripeController extends Controller
 
     public function checkout(Request $request)
     {
+        $request->validate([
+            'price' => 'required|numeric|min:1',
+        ]);
+
         $id = $request->query('id');
-        $price = $request->price * 100;
+        $price = $request->price * 100; // Convert to cents for Stripe
 
         \Stripe\Stripe::setApiKey(config('stripe.sk'));
 
@@ -33,23 +37,23 @@ class StripeController extends Controller
             'line_items' => [
                 [
                     'price_data' => [
-                        // 'currency' => 'gbp',
                         'currency' => 'usd',
                         'product_data' => [
                             'name' => 'Send me money!!!',
                         ],
-                        'unit_amount' => $price, // £5.00
+                        'unit_amount' => $price,
                     ],
                     'quantity' => 1,
                 ],
             ],
             'mode' => 'payment',
             'success_url' => route('success'),
-            'cancel_url' => route('index'),
+            'cancel_url' => route('index', ['id' => $request->id]),
         ]);
 
         return redirect()->away($session->url);
     }
+
 
     public function success()
     {

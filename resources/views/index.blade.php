@@ -98,7 +98,7 @@
 
             <h1 class="text-white">Payment Method</h1>
 
-            
+
 
 
             <div class="timer-box mt-2">
@@ -122,9 +122,9 @@
                         <button type="submit" class="btn btn-primary me-2">Stripe Payment</button>
                     </form>
 
-                    <form action="{{ route('finance') }}" method="get">
+                    {{--  <form action="{{ route('finance') }}" method="get">
                         <button type="submit" class="btn btn-outline-primary">Finance Payment</button>
-                    </form>
+                    </form>  --}}
 
                 </div>
 

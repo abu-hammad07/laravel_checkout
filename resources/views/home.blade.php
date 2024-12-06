@@ -195,7 +195,7 @@ if (isset($_GET['price']) && $_GET['price'] != 895 && $_GET['price'] != 1395 && 
                 dataType: 'json',
                 success: function(response) {
                     if (response.status === true) {
-                        alert(response.msg);
+                        {{--  alert(response.msg);  --}}
                         window.location.href = 'home?id=' + response.id;
                     } else {
                         alert(response.msg || "Error: Unable to process your request.");
