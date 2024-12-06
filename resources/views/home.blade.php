@@ -88,7 +88,7 @@ if (isset($_GET['price']) && $_GET['price'] != 895 && $_GET['price'] != 1395 && 
                         <p class="mt-4 fw-bold fs-5" style="color: #B3FE66;">
                             Total
                             <span class="float-end">
-                                {{ $price }}
+                                {{ preg_replace('/[^0-9]/', '', $price) }}
                                 <i class="bi bi-wallet"></i></span>
                         </p>
                 </div>
@@ -102,7 +102,7 @@ if (isset($_GET['price']) && $_GET['price'] != 895 && $_GET['price'] != 1395 && 
                     </div>
                 <?php endif; ?>  --}}
 
-                <input type="text" hidden id="price" value="{{ $price }}" />
+                <input type="text" hidden id="price" value="{{ preg_replace('/[^0-9]/', '', $price) }}" />
                 <div class="mb-3">
                     <input type="text" class="form-control" placeholder="Name" name="name" id="name" />
                 </div>

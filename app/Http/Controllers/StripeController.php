@@ -70,6 +70,7 @@ class StripeController extends Controller
                 'description' => "Take your brand to the next level with enhanced branding, a basic website, short videos, and business consultation to fuel growth."
             ],
             '1895packagefbl' => [
+                'price' => "1895",
                 'title' => "x1 Full Brand Launch",
                 'description' => "Comprehensive brand development with an advanced website, social media management, and email marketing to scale quickly."
             ],
